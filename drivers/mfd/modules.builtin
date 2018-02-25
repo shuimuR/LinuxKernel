@@ -1,0 +1,4 @@
+kernel/drivers/mfd/sm501.ko
+kernel/drivers/mfd/tps65010.ko
+kernel/drivers/mfd/pcf50633.ko
+kernel/drivers/mfd/pcf50633-gpio.ko
