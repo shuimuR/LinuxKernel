@@ -1,3 +1,0 @@
-kernel/drivers/char/lp.ko
-kernel/drivers/char/ppdev.ko
-kernel/drivers/char/hw_random/rng-core.ko

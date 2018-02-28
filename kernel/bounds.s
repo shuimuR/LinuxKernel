@@ -1,3 +1,13 @@
+	.arch armv4t
+	.fpu softvfp
+	.eabi_attribute 20, 1
+	.eabi_attribute 21, 1
+	.eabi_attribute 23, 3
+	.eabi_attribute 24, 1
+	.eabi_attribute 25, 1
+	.eabi_attribute 26, 2
+	.eabi_attribute 30, 2
+	.eabi_attribute 18, 2
 	.file	"bounds.c"
 @ GNU C (ctng-1.8.1-FA) version 4.5.1 (arm-none-linux-gnueabi)
 @	compiled by GNU C version 4.3.0 20080428 (Red Hat 4.3.0-8), GMP version 4.3.2, MPFR version 2.4.2-p2, MPC version 0.8.1
@@ -13,16 +23,15 @@
 @ -DKBUILD_MODNAME="bounds" -isystem
 @ /opt/arm-linux-gcc/4.5.1/bin/../lib/gcc/arm-none-linux-gnueabi/4.5.1/include
 @ -include ./include/linux/kconfig.h -MD kernel/.bounds.s.d kernel/bounds.c
-@ -mlittle-endian -mapcs -mno-sched-prolog -mabi=apcs-gnu
-@ -mno-thumb-interwork -marm -march=armv4t -mtune=arm9tdmi -msoft-float
-@ -mfpu=vfp -auxbase-strip kernel/bounds.s -g -O2 -Wall -Wundef
-@ -Wstrict-prototypes -Wno-trigraphs -Werror-implicit-function-declaration
-@ -Wno-format-security -Wframe-larger-than=1024
-@ -Wdeclaration-after-statement -Wno-pointer-sign -Werror=implicit-int
-@ -Werror=strict-prototypes -std=gnu89 -fno-strict-aliasing -fno-common
-@ -fshort-wchar -fno-PIE -fno-dwarf2-cfi-asm -fno-ipa-sra
-@ -fno-delete-null-pointer-checks -fno-stack-protector
-@ -fno-omit-frame-pointer -fno-optimize-sibling-calls
+@ -mlittle-endian -mabi=aapcs-linux -mno-thumb-interwork -mfpu=vfp -marm
+@ -march=armv4t -mtune=arm9tdmi -msoft-float -auxbase-strip kernel/bounds.s
+@ -g -O2 -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs
+@ -Werror-implicit-function-declaration -Wno-format-security
+@ -Wframe-larger-than=1024 -Wdeclaration-after-statement -Wno-pointer-sign
+@ -Werror=implicit-int -Werror=strict-prototypes -std=gnu89
+@ -fno-strict-aliasing -fno-common -fshort-wchar -fno-PIE
+@ -fno-dwarf2-cfi-asm -fno-ipa-sra -funwind-tables
+@ -fno-delete-null-pointer-checks -fno-stack-protector -fomit-frame-pointer
 @ -fno-var-tracking-assignments -fno-strict-overflow -fno-stack-check
 @ -fconserve-stack -fverbose-asm
 @ options enabled:  -falign-loops -fargument-alias -fauto-inc-dec
@@ -35,24 +44,24 @@
 @ -finline-small-functions -fipa-cp -fipa-pure-const -fipa-reference
 @ -fira-share-save-slots -fira-share-spill-slots -fivopts
 @ -fkeep-static-consts -fleading-underscore -fmath-errno -fmerge-constants
-@ -fmerge-debug-strings -fmove-loop-invariants -foptimize-register-move
-@ -fpeephole -fpeephole2 -freg-struct-return -fregmove -freorder-blocks
-@ -freorder-functions -frerun-cse-after-loop
-@ -fsched-critical-path-heuristic -fsched-dep-count-heuristic
-@ -fsched-group-heuristic -fsched-interblock -fsched-last-insn-heuristic
-@ -fsched-rank-heuristic -fsched-spec -fsched-spec-insn-heuristic
-@ -fsched-stalled-insns-dep -fschedule-insns -fschedule-insns2
-@ -fsection-anchors -fshow-column -fsigned-zeros -fsplit-ivs-in-unroller
-@ -fsplit-wide-types -fthread-jumps -ftoplevel-reorder -ftrapping-math
-@ -ftree-builtin-call-dce -ftree-ccp -ftree-ch -ftree-copy-prop
-@ -ftree-copyrename -ftree-cselim -ftree-dce -ftree-dominator-opts
-@ -ftree-dse -ftree-forwprop -ftree-fre -ftree-loop-im -ftree-loop-ivcanon
-@ -ftree-loop-optimize -ftree-parallelize-loops= -ftree-phiprop -ftree-pre
-@ -ftree-pta -ftree-reassoc -ftree-scev-cprop -ftree-sink
-@ -ftree-slp-vectorize -ftree-sra -ftree-switch-conversion -ftree-ter
-@ -ftree-vect-loop-version -ftree-vrp -funit-at-a-time -fvar-tracking
-@ -fverbose-asm -fzero-initialized-in-bss -mapcs-frame -mglibc
-@ -mlittle-endian
+@ -fmerge-debug-strings -fmove-loop-invariants -fomit-frame-pointer
+@ -foptimize-register-move -foptimize-sibling-calls -fpeephole -fpeephole2
+@ -freg-struct-return -fregmove -freorder-blocks -freorder-functions
+@ -frerun-cse-after-loop -fsched-critical-path-heuristic
+@ -fsched-dep-count-heuristic -fsched-group-heuristic -fsched-interblock
+@ -fsched-last-insn-heuristic -fsched-rank-heuristic -fsched-spec
+@ -fsched-spec-insn-heuristic -fsched-stalled-insns-dep -fschedule-insns
+@ -fschedule-insns2 -fsection-anchors -fshow-column -fsigned-zeros
+@ -fsplit-ivs-in-unroller -fsplit-wide-types -fthread-jumps
+@ -ftoplevel-reorder -ftrapping-math -ftree-builtin-call-dce -ftree-ccp
+@ -ftree-ch -ftree-copy-prop -ftree-copyrename -ftree-cselim -ftree-dce
+@ -ftree-dominator-opts -ftree-dse -ftree-forwprop -ftree-fre
+@ -ftree-loop-im -ftree-loop-ivcanon -ftree-loop-optimize
+@ -ftree-parallelize-loops= -ftree-phiprop -ftree-pre -ftree-pta
+@ -ftree-reassoc -ftree-scev-cprop -ftree-sink -ftree-slp-vectorize
+@ -ftree-sra -ftree-switch-conversion -ftree-ter -ftree-vect-loop-version
+@ -ftree-vrp -funit-at-a-time -funwind-tables -fvar-tracking -fverbose-asm
+@ -fzero-initialized-in-bss -mglibc -mlittle-endian -msched-prolog
 
 	.section	.debug_abbrev,"",%progbits
 .Ldebug_abbrev0:
@@ -68,17 +77,13 @@
 	.global	foo
 	.type	foo, %function
 foo:
-.LFB157:
+	.fnstart
+.LFB158:
 	.file 1 "kernel/bounds.c"
 	.loc 1 17 0
 	@ args = 0, pretend = 0, frame = 0
-	@ frame_needed = 1, uses_anonymous_args = 0
-	mov	ip, sp	@,
-.LCFI0:
-	stmfd	sp!, {fp, ip, lr, pc}	@,
-.LCFI1:
-	sub	fp, ip, #4	@,,
-.LCFI2:
+	@ frame_needed = 0, uses_anonymous_args = 0
+	@ link register save eliminated.
 	.loc 1 19 0
 #APP
 @ 19 "kernel/bounds.c" 1
@@ -96,8 +101,9 @@ foo:
 .ascii "->SPINLOCK_SIZE #0 sizeof(spinlock_t)"	@
 @ 0 "" 2
 	.loc 1 26 0
-	ldmfd	sp, {fp, sp, pc}	@
-.LFE157:
+	bx	lr	@
+.LFE158:
+	.fnend
 	.size	foo, .-foo
 	.section	.debug_frame,"",%progbits
 .Lframe0:
@@ -118,56 +124,19 @@ foo:
 	.4byte	.LEFDE0-.LASFDE0
 .LASFDE0:
 	.4byte	.Lframe0
-	.4byte	.LFB157
-	.4byte	.LFE157-.LFB157
-	.byte	0x4
-	.4byte	.LCFI0-.LFB157
-	.byte	0xd
-	.uleb128 0xc
-	.byte	0x4
-	.4byte	.LCFI1-.LCFI0
-	.byte	0x8e
-	.uleb128 0x2
-	.byte	0x8d
-	.uleb128 0x3
-	.byte	0x8b
-	.uleb128 0x4
-	.byte	0x4
-	.4byte	.LCFI2-.LCFI1
-	.byte	0xc
-	.uleb128 0xb
-	.uleb128 0x4
+	.4byte	.LFB158
+	.4byte	.LFE158-.LFB158
 	.align	2
 .LEFDE0:
 	.text
 .Letext0:
-	.section	.debug_loc,"",%progbits
-.Ldebug_loc0:
-.LLST0:
-	.4byte	.LFB157-.Ltext0
-	.4byte	.LCFI0-.Ltext0
-	.2byte	0x2
-	.byte	0x7d
-	.sleb128 0
-	.4byte	.LCFI0-.Ltext0
-	.4byte	.LCFI2-.Ltext0
-	.2byte	0x2
-	.byte	0x7c
-	.sleb128 0
-	.4byte	.LCFI2-.Ltext0
-	.4byte	.LFE157-.Ltext0
-	.2byte	0x2
-	.byte	0x7b
-	.sleb128 4
-	.4byte	0x0
-	.4byte	0x0
 	.file 2 "./include/linux/page-flags.h"
 	.file 3 "./include/linux/mmzone.h"
 	.file 4 "./arch/arm/include/asm/hwcap.h"
 	.file 5 "./include/linux/printk.h"
 	.file 6 "./include/linux/kernel.h"
 	.section	.debug_info
-	.4byte	0x224
+	.4byte	0x223
 	.2byte	0x2
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
@@ -349,9 +318,11 @@ foo:
 	.byte	0x1
 	.byte	0x10
 	.byte	0x1
-	.4byte	.LFB157
-	.4byte	.LFE157
-	.4byte	.LLST0
+	.4byte	.LFB158
+	.4byte	.LFE158
+	.byte	0x2
+	.byte	0x7d
+	.sleb128 0
 	.uleb128 0x8
 	.4byte	.LASF47
 	.byte	0x4
@@ -361,14 +332,14 @@ foo:
 	.byte	0x1
 	.uleb128 0x9
 	.4byte	0x41
-	.4byte	0x18d
+	.4byte	0x18c
 	.uleb128 0xa
 	.byte	0x0
 	.uleb128 0x8
 	.4byte	.LASF48
 	.byte	0x5
 	.byte	0x3f
-	.4byte	0x182
+	.4byte	0x181
 	.byte	0x1
 	.byte	0x1
 	.uleb128 0xb
@@ -380,27 +351,27 @@ foo:
 	.byte	0x1
 	.uleb128 0x9
 	.4byte	0x64
-	.4byte	0x1b3
+	.4byte	0x1b2
 	.uleb128 0xa
 	.byte	0x0
 	.uleb128 0xb
 	.4byte	.LASF50
 	.byte	0x6
 	.2byte	0x233
-	.4byte	0x1c1
+	.4byte	0x1c0
 	.byte	0x1
 	.byte	0x1
 	.uleb128 0xc
-	.4byte	0x1a8
+	.4byte	0x1a7
 	.uleb128 0xb
 	.4byte	.LASF51
 	.byte	0x6
 	.2byte	0x23e
-	.4byte	0x1d4
+	.4byte	0x1d3
 	.byte	0x1
 	.byte	0x1
 	.uleb128 0xc
-	.4byte	0x1a8
+	.4byte	0x1a7
 	.uleb128 0x8
 	.4byte	.LASF47
 	.byte	0x4
@@ -412,7 +383,7 @@ foo:
 	.4byte	.LASF48
 	.byte	0x5
 	.byte	0x3f
-	.4byte	0x182
+	.4byte	0x181
 	.byte	0x1
 	.byte	0x1
 	.uleb128 0xb
@@ -426,20 +397,20 @@ foo:
 	.4byte	.LASF50
 	.byte	0x6
 	.2byte	0x233
-	.4byte	0x20f
+	.4byte	0x20e
 	.byte	0x1
 	.byte	0x1
 	.uleb128 0xc
-	.4byte	0x1a8
+	.4byte	0x1a7
 	.uleb128 0xb
 	.4byte	.LASF51
 	.byte	0x6
 	.2byte	0x23e
-	.4byte	0x222
+	.4byte	0x221
 	.byte	0x1
 	.byte	0x1
 	.uleb128 0xc
-	.4byte	0x1a8
+	.4byte	0x1a7
 	.byte	0x0
 	.section	.debug_abbrev
 	.uleb128 0x1
@@ -540,7 +511,7 @@ foo:
 	.uleb128 0x12
 	.uleb128 0x1
 	.uleb128 0x40
-	.uleb128 0x6
+	.uleb128 0xa
 	.byte	0x0
 	.byte	0x0
 	.uleb128 0x8
@@ -603,7 +574,7 @@ foo:
 	.4byte	0x16
 	.2byte	0x2
 	.4byte	.Ldebug_info0
-	.4byte	0x228
+	.4byte	0x227
 	.4byte	0x160
 	.ascii	"foo\000"
 	.4byte	0x0
@@ -611,7 +582,7 @@ foo:
 	.4byte	0x2a
 	.2byte	0x2
 	.4byte	.Ldebug_info0
-	.4byte	0x228
+	.4byte	0x227
 	.4byte	0x79
 	.ascii	"pageflags\000"
 	.4byte	0x140

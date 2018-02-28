@@ -1,2 +1,0 @@
-kernel/drivers/usb/host/ohci-hcd.ko
-kernel/drivers/usb/host/ohci-s3c2410.ko

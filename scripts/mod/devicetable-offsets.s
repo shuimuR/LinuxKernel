@@ -1,3 +1,13 @@
+	.arch armv4t
+	.fpu softvfp
+	.eabi_attribute 20, 1
+	.eabi_attribute 21, 1
+	.eabi_attribute 23, 3
+	.eabi_attribute 24, 1
+	.eabi_attribute 25, 1
+	.eabi_attribute 26, 2
+	.eabi_attribute 30, 2
+	.eabi_attribute 18, 2
 	.file	"devicetable-offsets.c"
 @ GNU C (ctng-1.8.1-FA) version 4.5.1 (arm-none-linux-gnueabi)
 @	compiled by GNU C version 4.3.0 20080428 (Red Hat 4.3.0-8), GMP version 4.3.2, MPFR version 2.4.2-p2, MPC version 0.8.1
@@ -15,16 +25,15 @@
 @ /opt/arm-linux-gcc/4.5.1/bin/../lib/gcc/arm-none-linux-gnueabi/4.5.1/include
 @ -include ./include/linux/kconfig.h -MD
 @ scripts/mod/.devicetable-offsets.s.d scripts/mod/devicetable-offsets.c
-@ -mlittle-endian -mapcs -mno-sched-prolog -mabi=apcs-gnu
-@ -mno-thumb-interwork -marm -march=armv4t -mtune=arm9tdmi -msoft-float
-@ -mfpu=vfp -auxbase-strip scripts/mod/devicetable-offsets.s -g -O2 -Wall
-@ -Wundef -Wstrict-prototypes -Wno-trigraphs
-@ -Werror-implicit-function-declaration -Wno-format-security
-@ -Wframe-larger-than=1024 -Wdeclaration-after-statement -Wno-pointer-sign
-@ -Werror=implicit-int -Werror=strict-prototypes -std=gnu89
-@ -fno-strict-aliasing -fno-common -fshort-wchar -fno-PIE
-@ -fno-dwarf2-cfi-asm -fno-ipa-sra -fno-delete-null-pointer-checks
-@ -fno-stack-protector -fno-omit-frame-pointer -fno-optimize-sibling-calls
+@ -mlittle-endian -mabi=aapcs-linux -mno-thumb-interwork -mfpu=vfp -marm
+@ -march=armv4t -mtune=arm9tdmi -msoft-float -auxbase-strip
+@ scripts/mod/devicetable-offsets.s -g -O2 -Wall -Wundef
+@ -Wstrict-prototypes -Wno-trigraphs -Werror-implicit-function-declaration
+@ -Wno-format-security -Wframe-larger-than=1024
+@ -Wdeclaration-after-statement -Wno-pointer-sign -Werror=implicit-int
+@ -Werror=strict-prototypes -std=gnu89 -fno-strict-aliasing -fno-common
+@ -fshort-wchar -fno-PIE -fno-dwarf2-cfi-asm -fno-ipa-sra -funwind-tables
+@ -fno-delete-null-pointer-checks -fno-stack-protector -fomit-frame-pointer
 @ -fno-var-tracking-assignments -fno-strict-overflow -fno-stack-check
 @ -fconserve-stack -fverbose-asm
 @ options enabled:  -falign-loops -fargument-alias -fauto-inc-dec
@@ -37,24 +46,24 @@
 @ -finline-small-functions -fipa-cp -fipa-pure-const -fipa-reference
 @ -fira-share-save-slots -fira-share-spill-slots -fivopts
 @ -fkeep-static-consts -fleading-underscore -fmath-errno -fmerge-constants
-@ -fmerge-debug-strings -fmove-loop-invariants -foptimize-register-move
-@ -fpeephole -fpeephole2 -freg-struct-return -fregmove -freorder-blocks
-@ -freorder-functions -frerun-cse-after-loop
-@ -fsched-critical-path-heuristic -fsched-dep-count-heuristic
-@ -fsched-group-heuristic -fsched-interblock -fsched-last-insn-heuristic
-@ -fsched-rank-heuristic -fsched-spec -fsched-spec-insn-heuristic
-@ -fsched-stalled-insns-dep -fschedule-insns -fschedule-insns2
-@ -fsection-anchors -fshow-column -fsigned-zeros -fsplit-ivs-in-unroller
-@ -fsplit-wide-types -fthread-jumps -ftoplevel-reorder -ftrapping-math
-@ -ftree-builtin-call-dce -ftree-ccp -ftree-ch -ftree-copy-prop
-@ -ftree-copyrename -ftree-cselim -ftree-dce -ftree-dominator-opts
-@ -ftree-dse -ftree-forwprop -ftree-fre -ftree-loop-im -ftree-loop-ivcanon
-@ -ftree-loop-optimize -ftree-parallelize-loops= -ftree-phiprop -ftree-pre
-@ -ftree-pta -ftree-reassoc -ftree-scev-cprop -ftree-sink
-@ -ftree-slp-vectorize -ftree-sra -ftree-switch-conversion -ftree-ter
-@ -ftree-vect-loop-version -ftree-vrp -funit-at-a-time -fvar-tracking
-@ -fverbose-asm -fzero-initialized-in-bss -mapcs-frame -mglibc
-@ -mlittle-endian
+@ -fmerge-debug-strings -fmove-loop-invariants -fomit-frame-pointer
+@ -foptimize-register-move -foptimize-sibling-calls -fpeephole -fpeephole2
+@ -freg-struct-return -fregmove -freorder-blocks -freorder-functions
+@ -frerun-cse-after-loop -fsched-critical-path-heuristic
+@ -fsched-dep-count-heuristic -fsched-group-heuristic -fsched-interblock
+@ -fsched-last-insn-heuristic -fsched-rank-heuristic -fsched-spec
+@ -fsched-spec-insn-heuristic -fsched-stalled-insns-dep -fschedule-insns
+@ -fschedule-insns2 -fsection-anchors -fshow-column -fsigned-zeros
+@ -fsplit-ivs-in-unroller -fsplit-wide-types -fthread-jumps
+@ -ftoplevel-reorder -ftrapping-math -ftree-builtin-call-dce -ftree-ccp
+@ -ftree-ch -ftree-copy-prop -ftree-copyrename -ftree-cselim -ftree-dce
+@ -ftree-dominator-opts -ftree-dse -ftree-forwprop -ftree-fre
+@ -ftree-loop-im -ftree-loop-ivcanon -ftree-loop-optimize
+@ -ftree-parallelize-loops= -ftree-phiprop -ftree-pre -ftree-pta
+@ -ftree-reassoc -ftree-scev-cprop -ftree-sink -ftree-slp-vectorize
+@ -ftree-sra -ftree-switch-conversion -ftree-ter -ftree-vect-loop-version
+@ -ftree-vrp -funit-at-a-time -funwind-tables -fvar-tracking -fverbose-asm
+@ -fzero-initialized-in-bss -mglibc -mlittle-endian -msched-prolog
 
 	.section	.debug_abbrev,"",%progbits
 .Ldebug_abbrev0:
@@ -70,17 +79,13 @@
 	.global	main
 	.type	main, %function
 main:
+	.fnstart
 .LFB21:
 	.file 1 "scripts/mod/devicetable-offsets.c"
 	.loc 1 10 0
 	@ args = 0, pretend = 0, frame = 0
-	@ frame_needed = 1, uses_anonymous_args = 0
-	mov	ip, sp	@,
-.LCFI0:
-	stmfd	sp!, {fp, ip, lr, pc}	@,
-.LCFI1:
-	sub	fp, ip, #4	@,,
-.LCFI2:
+	@ frame_needed = 0, uses_anonymous_args = 0
+	@ link register save eliminated.
 	.loc 1 11 0
 #APP
 @ 11 "scripts/mod/devicetable-offsets.c" 1
@@ -745,7 +750,7 @@ main:
 	.loc 1 174 0
 @ 174 "scripts/mod/devicetable-offsets.c" 1
 	
-.ascii "->SIZE_mips_cdmm_device_id #4 sizeof(struct mips_cdmm_device_id)"	@
+.ascii "->SIZE_mips_cdmm_device_id #1 sizeof(struct mips_cdmm_device_id)"	@
 @ 0 "" 2
 	.loc 1 175 0
 @ 175 "scripts/mod/devicetable-offsets.c" 1
@@ -780,7 +785,7 @@ main:
 	.loc 1 183 0
 @ 183 "scripts/mod/devicetable-offsets.c" 1
 	
-.ascii "->SIZE_cpu_feature #4 sizeof(struct cpu_feature)"	@
+.ascii "->SIZE_cpu_feature #2 sizeof(struct cpu_feature)"	@
 @ 0 "" 2
 	.loc 1 184 0
 @ 184 "scripts/mod/devicetable-offsets.c" 1
@@ -870,7 +875,7 @@ main:
 	.loc 1 206 0
 @ 206 "scripts/mod/devicetable-offsets.c" 1
 	
-.ascii "->SIZE_fsl_mc_device_id #20 sizeof(struct fsl_mc_device_id)"	@
+.ascii "->SIZE_fsl_mc_device_id #18 sizeof(struct fsl_mc_device_id)"	@
 @ 0 "" 2
 	.loc 1 207 0
 @ 207 "scripts/mod/devicetable-offsets.c" 1
@@ -914,8 +919,9 @@ main:
 @ 0 "" 2
 	.loc 1 218 0
 	mov	r0, #0	@,
-	ldmfd	sp, {fp, sp, pc}	@
+	bx	lr	@
 .LFE21:
+	.fnend
 	.size	main, .-main
 	.section	.debug_frame,"",%progbits
 .Lframe0:
@@ -938,52 +944,15 @@ main:
 	.4byte	.Lframe0
 	.4byte	.LFB21
 	.4byte	.LFE21-.LFB21
-	.byte	0x4
-	.4byte	.LCFI0-.LFB21
-	.byte	0xd
-	.uleb128 0xc
-	.byte	0x4
-	.4byte	.LCFI1-.LCFI0
-	.byte	0x8e
-	.uleb128 0x2
-	.byte	0x8d
-	.uleb128 0x3
-	.byte	0x8b
-	.uleb128 0x4
-	.byte	0x4
-	.4byte	.LCFI2-.LCFI1
-	.byte	0xc
-	.uleb128 0xb
-	.uleb128 0x4
 	.align	2
 .LEFDE0:
 	.text
 .Letext0:
-	.section	.debug_loc,"",%progbits
-.Ldebug_loc0:
-.LLST0:
-	.4byte	.LFB21-.Ltext0
-	.4byte	.LCFI0-.Ltext0
-	.2byte	0x2
-	.byte	0x7d
-	.sleb128 0
-	.4byte	.LCFI0-.Ltext0
-	.4byte	.LCFI2-.Ltext0
-	.2byte	0x2
-	.byte	0x7c
-	.sleb128 0
-	.4byte	.LCFI2-.Ltext0
-	.4byte	.LFE21-.Ltext0
-	.2byte	0x2
-	.byte	0x7b
-	.sleb128 4
-	.4byte	0x0
-	.4byte	0x0
 	.file 2 "./include/uapi/asm-generic/int-ll64.h"
 	.file 3 "./include/uapi/linux/uuid.h"
 	.file 4 "./include/linux/uuid.h"
 	.section	.debug_info
-	.4byte	0x128
+	.4byte	0x127
 	.2byte	0x2
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
@@ -1102,12 +1071,14 @@ main:
 	.4byte	0x4c
 	.4byte	.LFB21
 	.4byte	.LFE21
-	.4byte	.LLST0
+	.byte	0x2
+	.byte	0x7d
+	.sleb128 0
 	.uleb128 0xa
 	.4byte	.LASF14
 	.byte	0x4
 	.byte	0x28
-	.4byte	0xfa
+	.4byte	0xf9
 	.byte	0x1
 	.byte	0x1
 	.uleb128 0xb
@@ -1116,7 +1087,7 @@ main:
 	.4byte	.LASF15
 	.byte	0x4
 	.byte	0x29
-	.4byte	0x10c
+	.4byte	0x10b
 	.byte	0x1
 	.byte	0x1
 	.uleb128 0xb
@@ -1125,14 +1096,14 @@ main:
 	.4byte	.LASF14
 	.byte	0x4
 	.byte	0x28
-	.4byte	0xfa
+	.4byte	0xf9
 	.byte	0x1
 	.byte	0x1
 	.uleb128 0xa
 	.4byte	.LASF15
 	.byte	0x4
 	.byte	0x29
-	.4byte	0x10c
+	.4byte	0x10b
 	.byte	0x1
 	.byte	0x1
 	.byte	0x0
@@ -1257,7 +1228,7 @@ main:
 	.uleb128 0x12
 	.uleb128 0x1
 	.uleb128 0x40
-	.uleb128 0x6
+	.uleb128 0xa
 	.byte	0x0
 	.byte	0x0
 	.uleb128 0xa
@@ -1289,7 +1260,7 @@ main:
 	.4byte	0x17
 	.2byte	0x2
 	.4byte	.Ldebug_info0
-	.4byte	0x12c
+	.4byte	0x12b
 	.4byte	0xd4
 	.ascii	"main\000"
 	.4byte	0x0
@@ -1297,7 +1268,7 @@ main:
 	.4byte	0x2d
 	.2byte	0x2
 	.4byte	.Ldebug_info0
-	.4byte	0x12c
+	.4byte	0x12b
 	.4byte	0x2c
 	.ascii	"__u8\000"
 	.4byte	0xa9
